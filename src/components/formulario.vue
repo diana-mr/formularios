@@ -34,11 +34,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Laravel app</td>
-          <td>Laravel</td>
-          <td class="bg-success">Si / No</td>
+        <tr v-for="(proyecto, clave) in proyectos" :key="clave">
+          <td>{{clave+1}}</td>
+          <td>{{proyecto.proyecto}}</td>
+          <td>{{proyecto.tipo}}</td>
+          <td class="bg-success" :class="proyecto.urgente ? 'bg-success' : 'bg-danger'">{{proyecto.urgente ? "Si" : "No"}}</td>
         </tr>
       </tbody>
     </table>
